@@ -1,0 +1,553 @@
+:root{
+
+    --mainColor:#fff0db;
+    --secondaryColor:#faf0e6;
+
+    --borderColor:#bfa58c;
+
+    --mainText:black;
+    --secondaryText:#666666;
+
+    /* --themeDotBorder:#24292e; */
+
+    --previewBg:#fffce6;
+
+    --previewShadow: #e6e1cf;
+
+    --buttonColor: #5e5144;
+
+    --bluehover: white;
+
+    --darkModeCircleSize: 30px;
+
+    --darkModeCircleColor: #857261;
+
+}
+
+html, body{
+    padding:0;
+    margin: 0;
+}
+
+body *{
+    transition: 0.7s
+}
+
+
+h1, h2, h3, h4, h5, h6, strong{
+    color: var(--mainText);
+    font-weight: 500;
+    font-family: 'Roboto Slab', serif;
+}
+
+
+p, li, span, label, input, textarea{
+    color: var(--secondaryText);
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+a{
+    font-family: 'Roboto Mono', monospace;
+    text-decoration: none;
+    color:#17a2b8;
+}
+
+ul{
+    list-style: none;
+}
+
+h1{font-size: 56px;}
+h2{font-size: 36px;}
+h3{font-size: 28px;}
+h4{font-size: 24px;}
+h5{font-size: 20px;}
+h6{font-size: 16px;}
+
+.s1{
+    background-color: var(--mainColor);
+    border-bottom:1px solid var(--borderColor);
+    overflow: auto;
+}
+
+.s2{
+    background-color: var(--secondaryColor);
+    border-bottom:1px solid var(--borderColor);
+    overflow: auto;
+}
+
+.main-container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+.greeting-wrapper{
+    display: grid;
+
+    /* justify-content: center; */
+    text-align: center;
+    align-content: center;
+    min-height: 10em;
+}
+
+.intro-wrapper{
+    width: 750px;
+    margin: 0 auto;
+    background-color: var(--secondaryColor);
+    border: 30px solid var(--borderColor);
+    border-bottom: 0;
+    border-radius: 100px 100px 0 0;
+    /* border-bottom-color: transparent; */
+
+    /* add css shadow thing */
+	-webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+    box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+    
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-rows: 3em 20em; */
+    grid-template-areas: 'nav-wrapper nav-wrapper' 'left-column right-column';
+}
+
+.nav-wrapper{
+    grid-area:nav-wrapper;
+    border-radius: 50px 50px 0 0;
+    /* flex box for inlining */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    /* background-color: var(--mainColor); */
+    /* border: 0.5px dotted coral; */
+    
+}
+
+.theme-dot-wrapper{
+    transform: rotate(0deg);
+
+    margin:0 auto;
+    /* margin-right: 0px; */
+    /* margin-left: 5px; */
+    /* margin-bottom: 5px; */
+    /* padding: 10px; */
+    /* padding-top: 0px; */
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    /* border: 1px dotted red; */
+    position: relative;
+    /* border: 0.5px dotted coral; */
+}
+
+.theme-change-wrapper{
+
+    margin-right: 5px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;    
+}
+
+#theme-text{
+    width: 180px;
+    margin: 0;
+    line-height: 0;
+    /* border: 0.5px dotted coral; */
+    text-align: center;
+}
+#theme-text h5{
+    font-size: 10px;
+    /* text-align: center; */
+}
+
+.theme-dot-wrapper.rotate{
+    transform: rotate(180deg);
+}
+
+.theme-small-wrapper{
+
+    height: calc(var(--darkModeCircleSize) / 2);
+    width: var(--darkModeCircleSize);
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* border: 1px solid blue; */
+}
+
+#theme-small-left{
+    height: 100%;
+    width: 25%;
+    border-bottom-left-radius: calc(var(--darkModeCircleSize) / 2);
+    border-top-left-radius: calc(var(--darkModeCircleSize) / 2);
+    background-color: var(--secondaryColor);
+    border-right: 0;
+}
+#theme-small-right{
+    height: 100%;
+    width: 25%;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: var(--darkModeCircleColor);
+    border-left: 0;
+}
+
+.theme-large-wrapper{
+    /* height: 40px; */
+
+    height: var(--darkModeCircleSize);
+    /* width: 80px; */
+    width: calc(var(--darkModeCircleSize) * 2);
+    /* border-radius: 50%;
+    background-color: var(--borderColor); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid coral; */
+}
+
+
+#theme-large-left {
+    height: 100%;
+    width: 25%;
+    border-bottom-left-radius: calc(var(--darkModeCircleSize) + 2px);
+    border-top-left-radius: calc(var(--darkModeCircleSize) + 2px);
+    background-color: var(--darkModeCircleColor);
+    border: 2px solid var(--darkModeCircleColor);
+    border-right: 0;
+
+}
+#theme-large-right{
+    height: 100%;
+    width: 25%;
+    border-bottom-right-radius: calc(var(--darkModeCircleSize) + 2px);
+    border-top-right-radius: calc(var(--darkModeCircleSize) + 2px);
+    background-color: var(--secondaryColor);
+    border: 2px solid var(--darkModeCircleColor);
+    border-left: 0;
+}
+
+
+.theme-clickable-bottom{
+    cursor: pointer;
+}
+
+
+
+
+.time-wrapper{
+    margin:0;
+    padding: 20px;
+    margin-right: 5px;
+    margin-left: 40px;
+}
+
+#curr-time{
+    margin: 10px;
+    padding: 0px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    line-height: 0;
+}
+
+#dot-1{
+    background-color:red;
+}
+#dot-2{
+    background-color:yellow;
+}
+#dot-3{
+    background-color: green;
+}
+
+.browser-dots{
+    background-color:black;
+    height:15px;
+    width:15px;
+    border-radius: 50%;
+    margin: 5px;
+
+	-webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+
+}
+
+.cutout{
+    /* background-color: var(--borderColor); */
+    width: 450px;
+    /* height:20px; */
+    height: 90px;
+
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+
+}
+
+#cutout-top{
+    background-color: var(--borderColor);
+    height:50px;
+    width: 100%;
+    border-radius: 0px 0px 40px 40px;
+}
+#cutout-bottom{
+    background-color: transparent;
+    height: 35px;
+    width: 100%;
+}
+
+.left-column{
+    grid-area:left-column;
+    padding-top:50px;
+    padding-bottom:50px;
+}
+
+/* https://medium.com/@biancapower/how-to-make-a-rectangle-image-a-circle-in-css-2f392bc9abd3 */
+/* Had to make sure to do margin: 0 auto; to center the div for profile-cropper in the column */
+.profile-cropper {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    /* border: 1px solid coral; */
+    border: 2px solid var(--borderColor);
+    margin: 0 auto;
+}
+#profile-pic {
+    display: block;
+    margin: 0 auto;
+    margin-left: 25%;
+    height: 100%;
+    width: auto;
+}
+
+/* #profile-pic{
+    display:block;
+    margin:0 auto;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border: 2px solid var(--borderColor);
+} */
+
+#settings-note{
+    /* margin-top: 20px; */
+    padding-top: 20px;
+    font-size:12px;
+    font-style:italic;
+    text-align:center;
+}
+
+.right-column{
+    grid-area:right-column;
+    display: grid;
+    align-content: center;
+
+    padding-top:50px;
+    padding-bottom: 50px;
+}
+
+#preview-shadow{
+    background-color: var(--previewShadow);
+    width:300px;
+    height:180px;
+    padding-left:30px;
+    padding-top:30px;
+}
+
+#preview{
+    width: 300px;
+    border:1.5px solid #17a2b8;
+    background-color: var(--previewBg);
+    padding:15px;
+    position:relative;
+}
+
+
+.corner{
+
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border:1.5px solid #17a2b8;
+    background-color: #fff;
+
+    position:absolute;
+
+}
+
+#corner-tl{
+    top:-5px;
+    left:-5px;
+}
+#corner-tr{
+    top:-5px;
+    right:-5px;
+}
+#corner-br{
+    bottom:-5px;
+    right:-5px;
+}
+#corner-bl{
+    bottom:-5px;
+    left:-5px;
+}
+
+.about-wrapper{
+    display: grid;
+
+    /* instead of making 2 grids inside grid? */
+    /* better auto adjusting? */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+    padding-bottom: 50px;
+    padding-top: 50px;
+    gap: 100px
+}
+
+#skills{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--previewShadow);
+}
+
+.social-links{
+    display: grid;
+    align-content: center;
+    text-align:center;
+
+}
+
+#social_img{
+    width:100%
+}
+
+
+.post-wrapper{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, 320px);
+    gap: 20px;
+    justify-content: center;
+
+    padding-bottom: 50px;
+}
+
+.thumbnail{
+    display: block;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* .post-element{
+    padding-top: 100px;
+    padding-bottom: 100px;
+} */
+
+.post{
+    border: 1px solid var(--borderColor);
+        
+    -webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+    box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+    
+    /* padding-bottom; */
+}
+
+.post-preview{
+    background-color: #fff;
+    padding: 15px;
+    height: 150px;
+    position: relative;
+}
+
+.post-title{
+    color: black;
+    margin: 0;
+}
+
+.post-intro{
+    color:#4b5156;
+    font-size: 14px;
+}
+
+.read-more{
+    position: absolute;
+    bottom: 3px;
+    right: 10px;
+}
+
+
+#contact-form{
+
+    display: block;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid var(--borderColor);
+    padding: 15px;
+    border-radius: 10px;
+    background-color: var(--mainColor);
+    margin-bottom: 50px;
+}
+
+#contact-form label{
+    line-height: 2em;
+    ;
+}
+
+#contact-form textarea{
+    min-height: 100px;
+    font-size: 14px;
+}
+
+.input-field{
+    width: 100%;
+    padding-top:5px;
+    padding-bottom: 5px;
+    background-color: var(--secondaryColor);
+    border-radius: 10px;
+    border:1px solid var(--borderColor);
+    font-size:14px
+
+}
+
+#submit-button{
+    margin-top: 10px;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color:#fff;
+    font-size: 18px;
+    background-color: var(--buttonColor);
+    border:none;
+}
+
+@media screen and (max-width:1200px){
+    .main-container{
+        width: 95%;
+    }
+}
+@media screen and (max-width:800px){
+    .intro-wrapper{
+
+        grid-template-columns: 1fr;
+        /* grid-template-rows: 3em 20em; */
+        grid-template-areas: 
+        'nav-wrapper'
+        'left-column'
+        'right-column';
+    }
+    .right-column{
+        justify-content: center;
+    }
+}
