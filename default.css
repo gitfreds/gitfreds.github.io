@@ -29,8 +29,8 @@ html, body{
     margin: 0;
 }
 
-body *{
-    transition: 0.7s
+body *:not(.social-links){
+    transition: 0.7s;
 }
 
 
@@ -50,6 +50,12 @@ p, li, span, label, input, textarea{
 a{
     font-family: 'Roboto Mono', monospace;
     text-decoration: none;
+    color:#17a2b8;
+}
+
+a:hover{
+    font-family: 'Roboto Mono', monospace;
+    text-decoration: underline;
     color:#17a2b8;
 }
 
@@ -107,7 +113,7 @@ h6{font-size: 16px;}
     
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     /* grid-template-rows: 3em 20em; */
     grid-template-areas: 'nav-wrapper nav-wrapper' 'left-column right-column';
 }
@@ -309,6 +315,7 @@ h6{font-size: 16px;}
     grid-area:left-column;
     padding-top:50px;
     padding-bottom:50px;
+    /* border: 1px solid coral; */
 }
 
 /* https://medium.com/@biancapower/how-to-make-a-rectangle-image-a-circle-in-css-2f392bc9abd3 */
@@ -326,7 +333,7 @@ h6{font-size: 16px;}
 #profile-pic {
     display: block;
     margin: 0 auto;
-    margin-left: 25%;
+    /* margin-left:%; */
     height: 100%;
     width: auto;
 }
@@ -352,27 +359,36 @@ h6{font-size: 16px;}
     grid-area:right-column;
     display: grid;
     align-content: center;
-
     padding-top:50px;
     padding-bottom: 50px;
+    margin-bottom: 50px;
+    /* border: 1px solid coral; */
 }
 
 #preview-shadow{
     background-color: var(--previewShadow);
-    width:300px;
-    height:180px;
+    width:400px;
+    height:100px;
     padding-left:30px;
     padding-top:30px;
 }
 
 #preview{
-    width: 300px;
+    width: 400px;
     border:1.5px solid #17a2b8;
     background-color: var(--previewBg);
     padding:15px;
     position:relative;
+    text-align: center;
 }
 
+#roles a{
+    text-decoration: underline;
+    text-decoration-style: dashed;
+}
+#roles a:hover{
+    text-decoration-style: solid;
+}
 
 .corner{
 
@@ -415,6 +431,10 @@ h6{font-size: 16px;}
     gap: 100px
 }
 
+.about-me p{
+    font-size: 18px;
+}
+
 #skills{
     display: flex;
     justify-content: space-evenly;
@@ -425,7 +445,14 @@ h6{font-size: 16px;}
     display: grid;
     align-content: center;
     text-align:center;
+}
 
+.social-links a{
+    font-size: 22px;
+}
+.social-links a:hover{
+    font-weight: bold;
+    transition: 0ms;
 }
 
 #social_img{

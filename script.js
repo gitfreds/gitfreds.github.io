@@ -4,6 +4,28 @@ const setIntervalAsync = (fn, ms) => {
     });
 };
 
+function linksSetup(){
+
+    // TODO: figure out how to do this with jquery?
+
+    console.log("linksSetup() called")
+    
+    var comingSoon = "https://freddiewangwrites.medium.com/coming-soon-10b49f0d72cd";
+
+    var allLinks = document.getElementsByTagName("a");
+
+    console.log(allLinks.length)
+    console.log(allLinks[0].pathname)
+    // console.log(allLinks[0].)
+
+    for(var i=0, max=allLinks.length; i<max; i++) {
+        if (allLinks[i].dataset.set == "no"){
+            console.log("not link found")
+            allLinks[i].href = comingSoon
+        }
+    }
+
+}
 
 function initTheme(){
     let theme = localStorage.getItem('theme-mode')
@@ -116,3 +138,4 @@ setIntervalAsync(async () => renderTime(), 1000);
 console.log("Working2!")
 initTheme()
 themeDotSetup()
+linksSetup()
